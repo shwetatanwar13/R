@@ -1,0 +1,164 @@
+name=c("Shweta","Amol","Himanshu","Anmol","Rahul")
+address=c("Femont","Fremont","Bangalore","Delhi","Delhi")
+age=c(30,34,26,33,25)
+x<-data.frame(name,address,age)
+nrow(x)
+ncol(x)
+dim(x)
+names(x)[2]
+head(x)
+tail(x)
+x$age
+x[,2]
+x[,"age"]
+class(x[,"age"])
+
+*********************************************************
+a<-c("a","z")
+b<-1:3
+class(a)
+b
+c=a+b
+c
+a[1:5]
+******************************************************
+> x
+      name   address age
+1   Shweta    Femont  30
+2     Amol   Fremont  34
+3 Himanshu Bangalore  26
+4    Anmol     Delhi  33
+5    Rahul     Delhi  25
+
+> x[1]
+ name
+1   Shweta
+2     Amol
+3 Himanshu
+4    Anmol
+5    Rahul
+> > x[1,3]
+[1] 30
+> x["age"]
+  age
+1  30
+2  34
+3  26
+4  33
+5  25
+
+> x[,"age"]
+[1] 30 34 26 33 25
+> class(x[,"age"])
+[1] "numeric"
+> > x[1,"age"]
+[1] 30
+**********************************************
+List
+
+temp_list=list(71,"Shweta",x,(1:5))
+names(temp_list)=c("favnum","favname","favdata","favvec")
+
+
+temp_list["favnum"]
+
+
+> temp_list["favdata"]
+$`favdata`
+      name   address age
+1   Shweta    Femont  30
+2     Amol   Fremont  34
+3 Himanshu Bangalore  26
+4    Anmol     Delhi  33
+5    Rahul     Delhi  25
+
+> temp_list[["favdata"]]$age
+[1] 30 34 26 33 25
+> 
+**************************************************
+temp_list=list(71,"Shweta",x,(1:5))
+names(temp_list)=c("favnum","favname","favdata","favvec")
+
+temp_list
+temp_list[["favvec"]]
+
+temp_list["favfood"]<-"Chowmein"
+**********************************************
+Matrix
+
+> matrix1=matrix(1:40,nrow=4)
+> matrix1
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+[1,]    1    5    9   13   17   21   25   29   33    37
+[2,]    2    6   10   14   18   22   26   30   34    38
+[3,]    3    7   11   15   19   23   27   31   35    39
+[4,]    4    8   12   16   20   24   28   32   36    40
+> 
+> matrix1=matrix(1:20,nrow=4)
+> matrix2=matrix(21:40,nrow=4)
+> dim(matrix1)
+[1] 4 5
+> dim(matrix2)
+[1] 4 5
+> > matrix1*matrix2
+     [,1] [,2] [,3] [,4] [,5]
+[1,]   21  125  261  429  629
+[2,]   44  156  300  476  684
+[3,]   69  189  341  525  741
+[4,]   96  224  384  576  800
+*************************************************************
+Read CSV
+
+csvfile<-read.csv("C:/Users/Sushma/Desktop/ooc/R/shweta.csv",FALSE,",")
+class(csvfile)
+csvfile
+
+csvfile<-read.csv("https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv",FALSE,",")
+class(csvfile)
+csvfile
+******************************************************************
+histogram
+
+csvfile<-read.csv("C:/Users/Sushma/Desktop/ooc/R/shweta.csv",FALSE,",")
+class(csvfile)
+csvfile
+hist(csvfile$V2,main='V2',ylab="a",xlab='v2')
+
+plot
+
+
+plot(csvfile$Test1,csvfile$Grade,ylab="tst1",xlab="grade")
+
+csvfile<-read.csv("https://people.sc.fsu.edu/~jburkardt/data/csv/hurricanes.csv",TRUE,",")
+class(csvfile)
+csvfile
+
+plot(csvfile$Month,csvfile$Average,ylab="Month",xlab="Average")
+
+
+boxplot(csvfile$Average)
+************************************************************
+library(ggplot2)
+head(diamonds)
+
+qplot(diamonds$carat,diamonds$price,color=diamonds$color)
+
+******************************************************
+
+ls lists simply the objects in memory:only the names of the
+
+If we want to list	only	the	objects	which contain	a given	character	in	their	name,	the option	pattern	(which can be abbreviated with pat) can	be	used:	> ls(pat = "m")	[1] "m"	"name"
+
+
+The function ls.str displays some details on the objects in memory.
+**************************************************************
+class(mydata[,1])
+[1] "factor"
+> class(mydata["V1"])
+[1] "data.frame"
+> class(mydata$V1)
+[1] "factor"
+
+
+
+
